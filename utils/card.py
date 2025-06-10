@@ -45,7 +45,7 @@ class Deck(Card):
         return deck
 
     def __str__(self):
-        return f"card {self.color} {self.icon} {self.value}"
+        return f"{self.color} {self.icon} {self.value}"
     
     def distribute(self, list_players):
         full_deck = self.fill_deck()
