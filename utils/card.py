@@ -14,7 +14,7 @@ class Card(Symbol):
     def __init__(self, color: str, icon, value: str):
         super().__init__(color, icon)
         self.value = value
-        self.card = [icon, color, value]
+        self.card = [icon, color, value] 
     def __str__(self):
         return f"{self.card}"
     def __repr__(self):
@@ -56,8 +56,6 @@ class Deck():
         num_undistributed_cards = len(self.cards) % number_player
         undistributed_cards = self.cards[-num_undistributed_cards:]
         if num_undistributed_cards != 0:
-            print(f"‼️ There is {num_undistributed_cards} cards left on the table : {undistributed_cards}")
+            print(f"‼️ There is {num_undistributed_cards} cards left on the table : {", ".join(str(card) for card in undistributed_cards)}")
        
         return players_with_card
-    
-

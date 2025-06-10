@@ -1,5 +1,5 @@
 import random
-# from .game_utils import GameUtils
+from .game_utils import GameUtils
 class Player:
     def __init__(self, name: str = "", cards=None,turn_count: int = 1, number_of_cards: int = 0, history=None):
         if cards is None:
@@ -13,13 +13,14 @@ class Player:
         self.history = history
         
     def play(self):
+        utils = GameUtils()
         num_cards = len(self.cards)
         print(f"🚀 {self.name} has:")
         for i, card in enumerate(self.cards, start=1):
             print(f"  card {i}: {card}")
         if len(self.cards) > 1:
             user_response = input(f"Enter the number of the card you want to select? [1 - {num_cards}]: ").strip()
-    
+            utils.check_quit(user_response)
             try: 
                 user_response_int = int(user_response )
                 if not (1<=user_response_int<=num_cards):
