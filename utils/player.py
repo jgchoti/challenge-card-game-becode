@@ -30,4 +30,3 @@ class Player:
         self.cards.remove(selected_card)
         print(f"{self.name} (turn {self.turn_count}) played: {selected_card}.")
         return selected_card, self.cards, self.turn_count
-    

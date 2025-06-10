@@ -25,15 +25,15 @@ python main.py
 
 ```
 ▶️ Start the game...
-
-Player 1 (turn 10) played: ['♥', 'Red', 'Q'].
-Player 2 (turn 10) played: ['♣', 'Black', 4].
-Player 3 (turn 10) played: ['♠', 'Black', 9].
-Player 4 (turn 10) played: ['♠', 'Black', 2].
-Player 5 (turn 10) played: ['♦', 'Red', 10].
-Active card: [['♥', 'Red', 'Q'], ['♣', 'Black', 4], ['♠', 'Black', 9], ['♠', 'Black', 2], ['♦', 'Red', 10]]
-History cards: 45
-🌟========= End of turn : 10 =========🌟
+‼️ There is 2 cards left on the table
+🚀 Welcome! Player 1, Player 2, Player 3, Player 4, Player 5
+Player 1 (turn 1) played: ['♣', 'Black', 7].
+Player 2 (turn 1) played: ['♣', 'Black', 'J'].
+Player 3 (turn 1) played: ['♦', 'Red', 3].
+Player 4 (turn 1) played: ['♠', 'Black', 10].
+Player 5 (turn 1) played: ['♣', 'Black', 'K'].
+✨ Active card: [['♣', 'Black', 7], ['♣', 'Black', 'J'], ['♦', 'Red', 3], ['♠', 'Black', 10], ['♣', 'Black', 'K']]
+🌟========= End of turn : 1 =========🌟
 
 ```
 

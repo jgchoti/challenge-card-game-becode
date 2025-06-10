@@ -18,9 +18,11 @@ class Board:
         # Distribute the cards of the Deck to the players.
         player_distribute = deck.distribute(self.players)
         # Make each Player play() a Card, where each player should only play 1 card per turn, 
-        print(players_list)
+        print(f"🚀 Welcome!", ", ".join(players_list))
         for i in range(len(player_distribute[players_list[0]])):
             self.active_cards = []
+            if self.turn_count != 0:
+                print(f"🗑️ Number of cards already played in previous rounds: {len(self.history_cards)}")
             for player in players_list:
                 player = Player(player, player_distribute [player], self.turn_count + 1)
                 card = player.play()
@@ -28,8 +30,7 @@ class Board:
                 self.history_cards.append(card[0])
                 
             self.turn_count += 1
-            print(f"Active card: {self.active_cards}")
-            print(f"History cards: {len(self.history_cards) - len(self.active_cards) or 0}")
+            print(f"✨ Active card: {self.active_cards}")
             print(f"🌟========= End of turn : {self.turn_count} =========🌟")  
             
             
