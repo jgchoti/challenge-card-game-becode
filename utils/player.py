@@ -11,6 +11,9 @@ class Player:
         self.number_of_cards = number_of_cards
         self.turn_count = turn_count
         self.history = history
+    
+    def __str__(self):
+        return f"{self.name} : {(self.cards)}"
         
     def play(self):
         utils = GameUtils()
@@ -29,18 +32,18 @@ class Player:
             except:
                 user_response_int = random.randint(1, num_cards)
                 print("❌ Invalid input. the card will be choose randomly")
-            selected_card = self.cards[user_response_int - 1] 
+            selected_card = self.cards.pop(user_response_int - 1)
         elif len(self.cards) == 1:
-            selected_card = self.cards[0] 
+            selected_card = self.cards.pop(0)
         else:
             print("❌ no card left")
             
         
         self.history.append(selected_card)
-        self.cards.remove(selected_card)
         print(f"{self.name} (turn {self.turn_count}) played: {selected_card}.")
         return selected_card
     
-    
+   
+ 
     
    
