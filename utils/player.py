@@ -12,3 +12,22 @@
 # Add the Card to the Player's history.
 # Print: {PLAYER_NAME} {TURN_COUNT} played: {CARD_NUMBER} {CARD_SYMBOL_ICON}.
 # Return the Card.
+import random
+class Player:
+    def __init__(self, name: str = "", cards=None,turn_count: int = 1, number_of_cards: int = 0, history=None):
+        if cards is None:
+            cards = []
+        if history is None:
+            history = []
+        self.name = name
+        self.cards = cards
+        self.number_of_cards = number_of_cards
+        self.turn_count = turn_count
+        self.history = history
+        
+    def play(self):
+        selected_card = random.choice(self.cards) # randomly pick a Card in cards.
+        self.cards.remove(selected_card)
+        print(f"{self.name} (turn {self.turn_count}) played: {selected_card}.")
+        return selected_card, self.cards, self.turn_count
+    

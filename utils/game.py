@@ -1,20 +1,40 @@
-# 4. A board
-# In game.py create:
+from .card import Deck
+from .player import Player
+from .config import VALUE_LIST, ICON_LIST, COLOR_LIST 
+players_list = ["Player 1", "Player 2", "Player 3", "Player 4", "Player 5"]
 
-# A class called Board that contains:
+class Board:
+    def __init__(self, players : list[str], turn_count: int, active_cards: list, history_cards:list):
+        self.players = players #contain all the players that are playing.
+        self.turn_count = turn_count #contain the last card played by each player.
+        self.active_cards = active_cards # contain the last card played by each player.
+        self.history_cards = history_cards # contain all the cards played since the start of the game, except for active_cards.
+    
+    def start_game(self):
+        deck = Deck(COLOR_LIST, ICON_LIST, VALUE_LIST )
+        print("▶️ Start the game...")
+        # Fill a Deck
+        deck.fill_deck()
+        # Distribute the cards of the Deck to the players.
+        player_distribute = deck.distribute(self.players)
+        # Make each Player play() a Card, where each player should only play 1 card per turn, 
+        print(players_list)
+        for i in range(len(player_distribute[players_list[0]])):
+            self.active_cards = []
+            for player in players_list:
+                player = Player(player, player_distribute [player], self.turn_count + 1)
+                card = player.play()
+                self.active_cards.append(card[0])
+                self.history_cards.append(card[0])
+                
+            self.turn_count += 1
+            print(f"Active card: {self.active_cards}")
+            print(f"History cards: {len(self.history_cards) - len(self.active_cards) or 0}")
+            print(f"🌟========= End of turn : {self.turn_count} =========🌟")  
+            
+            
+                
 
-# An attribute players that is a list of Player. It will contain all the players that are playing.
-# An attribute turn_count that is an int.
-# An attribute active_cards that will contain the last card played by each player.
-# An attribute history_cards that will contain all the cards played since the start of the game, except for active_cards.
-# A method start_game() that will:
-# Start the game,
-# Fill a Deck,
-# Distribute the cards of the Deck to the players.
-# Make each Player play() a Card, where each player should only play 1 card per turn, and all players have to play at each turn until they have no cards left.
-# At the end of each turn, print:
-# The turn count.
-# The list of active cards.
-# The number of cards in the history_cards.
 
-Board
+       
+        
