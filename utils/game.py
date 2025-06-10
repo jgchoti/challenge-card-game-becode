@@ -48,6 +48,13 @@ class Board:
             print(f"✨ Active card: {self.active_cards}")
             print(f"🌟========= End of turn : {self.turn_count} =========🌟")  
             
+                    
+                
+                
+                
+    
+        
+            
             
                 
 

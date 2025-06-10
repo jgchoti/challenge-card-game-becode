@@ -12,7 +12,6 @@ class Player:
         self.history = history
         
     def play(self):
-        # selected_card = random.choice(self.cards) # randomly pick a Card in cards.
         num_cards = len(self.cards)
         print(f"🚀 {self.name} has {self.cards}")
         if len(self.cards) > 1:
@@ -25,8 +24,12 @@ class Player:
                 user_response = random.randint(1, num_cards)
                 print("❌ Invalid input. the card will be choose randomly")
             selected_card = self.cards[user_response -1] 
-        else:
+        elif len(self.cards) == 1:
             selected_card = self.cards[0] 
+        else:
+            print("❌ no card left")
+            
+        
         self.history.append(selected_card)
         self.cards.remove(selected_card)
         print(f"{self.name} (turn {self.turn_count}) played: {selected_card}.")
