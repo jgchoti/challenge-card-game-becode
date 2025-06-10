@@ -1,17 +1,3 @@
-# 2. A bunch of players
-# In player.py create a class Player that contains these attributes:
-
-# cards which is a list of Card. (you will need to import Card from card.py). In a real card game, this is equivalent to the cards that the player has in his hands.
-# turn_count which is an int starting a 0.
-# number_of_cards which is an int starting at 0.
-# history which is a list of Card that will contain all the cards played by the player.
-# And some methods:
-
-# play() that will:
-# randomly pick a Card in cards.
-# Add the Card to the Player's history.
-# Print: {PLAYER_NAME} {TURN_COUNT} played: {CARD_NUMBER} {CARD_SYMBOL_ICON}.
-# Return the Card.
 import random
 class Player:
     def __init__(self, name: str = "", cards=None,turn_count: int = 1, number_of_cards: int = 0, history=None):
@@ -26,7 +12,24 @@ class Player:
         self.history = history
         
     def play(self):
-        selected_card = random.choice(self.cards) # randomly pick a Card in cards.
+        # selected_card = random.choice(self.cards) # randomly pick a Card in cards.
+        num_cards = len(self.cards)
+        print(f"🚀 {self.name} has {self.cards}")
+        if len(self.cards) > 1:
+            try: 
+                user_response = int(input(f"Enter number of card you want to select? [1 - {num_cards}]: "))
+                if not (1<=user_response<=num_cards):
+                    user_response = random.randint(1, num_cards)
+                    print("❌ Invalid input. the card will be choose randomly")
+            except:
+                user_response = random.randint(1, num_cards)
+                print("❌ Invalid input. the card will be choose randomly")
+            selected_card = self.cards[user_response -1] 
+        else:
+            selected_card = self.cards[0] 
+        self.history.append(selected_card)
         self.cards.remove(selected_card)
         print(f"{self.name} (turn {self.turn_count}) played: {selected_card}.")
         return selected_card, self.cards, self.turn_count
+    
+   

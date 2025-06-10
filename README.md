@@ -23,16 +23,18 @@ python main.py
 
 2. You will see a clean output of cards output in your terminal.
 
-```
+```python
 ▶️ Start the game...
-‼️ There is 2 cards left on the table
+
+‼️ There is 2 cards left on the table : [['♠', 'Black', 'J'], ['♥', 'Red', 4]]
 🚀 Welcome! Player 1, Player 2, Player 3, Player 4, Player 5
-Player 1 (turn 1) played: ['♣', 'Black', 7].
-Player 2 (turn 1) played: ['♣', 'Black', 'J'].
-Player 3 (turn 1) played: ['♦', 'Red', 3].
-Player 4 (turn 1) played: ['♠', 'Black', 10].
-Player 5 (turn 1) played: ['♣', 'Black', 'K'].
-✨ Active card: [['♣', 'Black', 7], ['♣', 'Black', 'J'], ['♦', 'Red', 3], ['♠', 'Black', 10], ['♣', 'Black', 'K']]
+=================================
+Player 1 (turn 1) played: ['♣', 'Black', 10].
+Player 2 (turn 1) played: ['♣', 'Black', 2].
+Player 3 (turn 1) played: ['♣', 'Black', 3].
+Player 4 (turn 1) played: ['♥', 'Red', 5].
+Player 5 (turn 1) played: ['♦', 'Red', 6].
+✨ Active card: [['♣', 'Black', 10], ['♣', 'Black', 2], ['♣', 'Black', 3], ['♥', 'Red', 5], ['♦', 'Red', 6]]
 🌟========= End of turn : 1 =========🌟
 
 ```

@@ -58,11 +58,10 @@ class Deck(Card):
             end = start + num_card_per_player
             players_with_card[player] = full_deck[start:end]
         num_undistributed_cards = len(full_deck) % number_player
-        # undistributed_cards = full_deck[:-num_undistributed_cards]
-        print(f"‼️ There is {num_undistributed_cards} cards left on the table")
+        undistributed_cards = full_deck[-num_undistributed_cards:]
+        if num_undistributed_cards != 0:
+            print(f"‼️ There is {num_undistributed_cards} cards left on the table : {undistributed_cards}")
        
         return players_with_card
     
 
-# num_undistributed_cards = len(full_deck) % number_player
-# undistributed_cards = full_deck[::-num_undistributed_cards]
