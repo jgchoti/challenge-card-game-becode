@@ -24,9 +24,9 @@ class Card(Symbol):
 # A fill_deck() method that will fill cards with a complete card game (an instance of 'A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K' for each possible symbol [♥, ♦, ♣, ♠]). Your deck should contain 52 cards at the end.
 # A shuffle() method that will shuffle all the list of cards.
 # A distribute() that will take a list of Player as parameter and will distribute the cards evenly between all the players.
-class Deck(Card):
-    def __init__(self, color, icon, value):
-        super().__init__(color, icon, value)    
+class Deck():
+    def __init__(self):
+        self.cards = [] 
     
     def fill_deck(self):
         deck = []
@@ -40,25 +40,21 @@ class Deck(Card):
         self.cards = deck
         return deck
     
-    def shuffle(self, deck):
-        random.shuffle(deck)
-        return deck
-
-    def __str__(self):
-        return f"{self.color} {self.icon} {self.value}"
+    def shuffle(self):
+        random.shuffle(self.cards)
+        
     
     def distribute(self, list_players):
-        full_deck = self.fill_deck()
-        full_deck = self.shuffle(full_deck)
+        self.shuffle()
         number_player = len(list_players)
-        num_card_per_player = len(full_deck) // number_player
+        num_card_per_player = len(self.cards) // number_player
         players_with_card = {}
         for i, player in enumerate(list_players):
             start = i * num_card_per_player
             end = start + num_card_per_player
-            players_with_card[player] = full_deck[start:end]
-        num_undistributed_cards = len(full_deck) % number_player
-        undistributed_cards = full_deck[-num_undistributed_cards:]
+            players_with_card[player] = self.cards[start:end]
+        num_undistributed_cards = len(self.cards) % number_player
+        undistributed_cards = self.cards[-num_undistributed_cards:]
         if num_undistributed_cards != 0:
             print(f"‼️ There is {num_undistributed_cards} cards left on the table : {undistributed_cards}")
        

@@ -2,11 +2,11 @@ from .card import Deck
 from .player import Player
 from .config import VALUE_LIST, ICON_LIST, COLOR_LIST 
 class Board:
-    def __init__(self, players : list[str], turn_count: int, active_cards: list, history_cards:list):
-        self.players = players #contain all the players that are playing.
-        self.turn_count = turn_count #contain the last card played by each player.
-        self.active_cards = active_cards # contain the last card played by each player.
-        self.history_cards = history_cards # contain all the cards played since the start of the game, except for active_cards.
+    def __init__(self):
+        self.players = [] #contain all the players that are playing.
+        self.turn_count = 0 #contain the last card played by each player.
+        self.active_cards = [] # contain the last card played by each player.
+        self.history_cards = [] # contain all the cards played since the start of the game, except for active_cards.
     
     def add_player(self):
         while True:
@@ -24,7 +24,7 @@ class Board:
         return self.players
     
     def start_game(self):
-        deck = Deck(COLOR_LIST, ICON_LIST, VALUE_LIST )
+        deck = Deck()
         print(f"\n▶️ Start the game...\n")
         # Fill a Deck
         deck.fill_deck()
