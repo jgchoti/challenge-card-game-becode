@@ -21,22 +21,39 @@ git clone https://github.com/jgchoti/challenge-card-game-becode.git
 python main.py
 ```
 
-2. You will see a clean output of cards output in your terminal.
+2. The game will ask player to input number of players and name of each player
 
 ```python
-▶️ Start the game...
 
-‼️ There is 2 cards left on the table : [['♠', 'Black', 'J'], ['♥', 'Red', 4]]
-🚀 Welcome! Player 1, Player 2, Player 3, Player 4, Player 5
-=================================
-Player 1 (turn 1) played: ['♣', 'Black', 10].
-Player 2 (turn 1) played: ['♣', 'Black', 2].
-Player 3 (turn 1) played: ['♣', 'Black', 3].
-Player 4 (turn 1) played: ['♥', 'Red', 5].
-Player 5 (turn 1) played: ['♦', 'Red', 6].
-✨ Active card: [['♣', 'Black', 10], ['♣', 'Black', 2], ['♣', 'Black', 3], ['♥', 'Red', 5], ['♦', 'Red', 6]]
+🪑 Enter number of players: 6
+Please enter player's name or ('Enter'for Player 1)
+Please enter player's name or ('Enter'for Player 2)
+Please enter player's name or ('Enter'for Player 3)
+Please enter player's name or ('Enter'for Player 4)
+Please enter player's name or ('Enter'for Player 5)
+Please enter player's name or ('Enter'for Player 6)
+
+```
+
+3. Player will need to select card that they want to play in each round
+
+```
+🚀 Player 1 has [['♣', 'Black', 4], ['♠', 'Black', 6], ['♥', 'Red', 3], ['♥', 'Red', 'A'], ['♦', 'Red', 6], ['♦', 'Red', 10], ['♥', 'Red', 7], ['♣', 'Black', 6]]
+Enter number of card you want to select? [1 - 8]:
+```
+
+4. Player will see a clean output of cards output in their terminal.
+
+```python
+
+Player 1 (turn 1) played: ['♦', 'Red', 6].
+```
+
+5. at the end of each round, player can see the output
+
+```
+✨ Active card: [['♦', 'Red', 6], ['♠', 'Black', 2], ['♥', 'Red', 8], ['♠', 'Black', 3], ['♦', 'Red', 'J'], ['♥', 'Red', 'J']]
 🌟========= End of turn : 1 =========🌟
-
 ```
 
 ## 💬 Personal Situation
