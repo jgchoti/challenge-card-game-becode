@@ -41,8 +41,8 @@ class Board:
             for player in self.players:
                 player = Player(player, player_distribute [player], self.turn_count + 1)
                 card = player.play()
-                self.active_cards.append(card[0])
-                self.history_cards.append(card[0])
+                self.active_cards.append(card)
+                self.history_cards.append(card)
                 
             self.turn_count += 1
             print(f"✨ Active card: {self.active_cards}")
