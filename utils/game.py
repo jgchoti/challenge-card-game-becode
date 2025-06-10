@@ -16,3 +16,5 @@
 # The turn count.
 # The list of active cards.
 # The number of cards in the history_cards.
+
+Board
