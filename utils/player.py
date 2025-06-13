@@ -13,7 +13,10 @@ class Player:
         self.history = history
     
     def __str__(self):
-        return f"{self.name} : {(self.cards)}"
+        return f"{self.name}"
+    
+    def __repr__(self):
+        return f"{self.name}"
         
     def play(self):
         utils = GameUtils()

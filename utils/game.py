@@ -63,9 +63,9 @@ class Board:
         winners = [player for player, score in self.scores.items() if score == highest_score ]
         print(f"🌟====================================🌟")
         if len(winners) == 1:
-            print(f"{winners.name} is the winner with a score of {highest_score}")
+            print(f"{winners[0]} is the winner with a score of {highest_score}")
         else:
-            winner_names = ", ".join(player.name for player in winners)
+            winner_names = ", ".join(str(player) for player in winners)
             print(f"It's a tie! 🎉 The winners are: {winner_names} with a score of {highest_score}")
         print(f"🌟====================================🌟")
     
